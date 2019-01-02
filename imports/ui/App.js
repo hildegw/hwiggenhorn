@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, Entity, { Component } from 'react';
 import Flexbox from 'flexbox-react';
 
 import Task from './Task.js';
@@ -24,7 +24,6 @@ export default class App extends Component {
 
 
 
-
   render() {
     return (
       <div className="container" style={containerStyle} >
@@ -39,8 +38,12 @@ export default class App extends Component {
           {this.renderTasks()}
         </Flexbox>
       </Flexbox>
+      <img src={('./images/test.gltf')} />
+      <Entity source={{gltf2: asset('./images/test.gltf')}} />
 
-      </div>
+    </div>
+
+
     );
   }
 }
@@ -50,9 +53,18 @@ const containerStyle = {
   margin: 0,
   minHeight: '100%',
   background: 'white',
+  position: 'absolute',
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
 }
 const headerStyle = {
-  background: '#d2edf4',
+  //background: '#d2edf4',
+  backgroundImage: 'url(./images/bgImage.jpg)',
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
   padding: 20,
   position: 'relative',
 }
